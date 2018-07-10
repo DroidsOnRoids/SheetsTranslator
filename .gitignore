@@ -5,7 +5,7 @@
 ## Build generated
 build/
 DerivedData/
-release.zip
+sheetstranslator.zip
 
 ## Various settings
 *.pbxuser
