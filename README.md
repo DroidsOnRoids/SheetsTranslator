@@ -32,7 +32,7 @@ Now SheetsTranslator has an access to this sheet and is ready to use it!
 ### Project integration
 1. Add this line to your Podfile and run **pod install**
 ```
-pod 'SheetsTranslator', :git => 'https://github.com/DroidsOnRoids/SheetsTranslator.git'
+pod 'SheetsTranslator'
 ```
 2. Add this script as a build phase to your project
 ```
