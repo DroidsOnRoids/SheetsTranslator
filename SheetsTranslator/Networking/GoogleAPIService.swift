@@ -12,7 +12,7 @@ typealias APIResultCallback = (APIResult<[String: Any]>) -> ()
 
 final class GoogleAPIService {
     
-    private static let timeout: TimeInterval = 5
+    private static let timeout: TimeInterval = 10
     
     private var token: String?
     
@@ -44,9 +44,9 @@ final class GoogleAPIService {
     }
     
     private func jsonRequest(_ request: URLRequestProtocol, completion: @escaping APIResultCallback) {
-        session.dataTask(with: request.urlRequest) { data, _, _ in
+        session.dataTask(with: request.urlRequest) { data, _, error in
             guard let data = data else {
-                completion(.failure)
+                completion(.failure(error))
                 return
             }
             

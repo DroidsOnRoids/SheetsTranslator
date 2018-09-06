@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name           = 'SheetsTranslator'
-  s.version        = '0.1'
+  s.version        = '0.2'
   s.summary        = 'App translation generator using Google Sheets API'
   s.homepage       = 'https://github.com/DroidsOnRoids/SheetsTranslator'
   s.license        = 'MIT'

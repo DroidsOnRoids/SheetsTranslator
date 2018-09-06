@@ -56,8 +56,9 @@ private func parseResult(_ result: APIResult<[String: Any]>) {
         } catch let error {
             warningAndExit(error.localizedDescription)
         }
-    case .failure:
-        warningAndExit("Networking error")
+    case .failure(let error):
+        let errorSuffix = (error?.localizedDescription).map { " (\($0))" } ?? ""
+        warningAndExit("Networking error" + errorSuffix)
     }
 }
 

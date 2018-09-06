@@ -10,7 +10,7 @@ import Foundation
 
 enum APIResult<Element> {
     case success(Element)
-    case failure
+    case failure(Error?)
 }
 
 enum HTTPMethod: String {
