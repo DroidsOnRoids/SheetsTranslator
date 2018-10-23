@@ -36,6 +36,7 @@ struct iOSLocalizer: Localizer {
             
             let fixedTranslation = translation
                 .replacingOccurrences(of: "\n", with: "\\n")
+                .replacingOccurrences(of: "\"", with: "\\\"")
             
             return "\"\(key)\" = \"\(fixedTranslation)\";"
         }
