@@ -27,10 +27,10 @@ private let outputArgument =
                           usage: "Output translation path (or current directory if not provided)")
 
 private let tabNameArgument =
-CommandStringArgument(shortFlag: "t",
-                      longFlag: "tab",
-                      required: false,
-                      usage: "Sheet tab name(or first one if not provided)")
+    CommandStringArgument(shortFlag: "t",
+                          longFlag: "tab",
+                          required: false,
+                          usage: "Sheet tab name(or first one if not provided)")
 
 CommandLineTool.shared.parser.add(arguments: sheetArgument, tabNameArgument, credentialsArgument, outputArgument)
 CommandLineTool.shared.parseOrExit()
