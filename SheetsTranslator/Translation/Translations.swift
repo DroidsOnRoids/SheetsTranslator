@@ -57,8 +57,8 @@ extension Translations {
     
     private static let supportedLanguageLength = 2...5
     
-    static func from(spreadsheet: Spreadsheet) -> Translations? {
-        let formatter = SpreadsheetFormatter(spreadsheet: spreadsheet)
+    static func from(spreadsheet: Spreadsheet, tabName: String?) -> Translations? {
+        let formatter = SpreadsheetFormatter(spreadsheet: spreadsheet, tabName: tabName)
         
         guard formatter.columns >= minColumns && formatter.rows >= minRows else { return nil }
         

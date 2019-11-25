@@ -24,7 +24,7 @@ GENERAL|GENERAL_LOGOUT|Logout|Wyloguj|...
 Check out sample translation sheet [here](https://docs.google.com/spreadsheets/d/1HZwNTyo2XRkADjNLvXlMMlZ_buzCNYxhjIzvwL6mid8/)
 
 2. Click on **Share** button, and open **Advanced** panel
-3. Invite **<your account>@sheetstranslator.iam.gserviceaccount.com** with **view** permissions
+3. Invite **<your account>translator@sheetstranslator.iam.gserviceaccount.com** with **view** permissions
 4. Copy spreadsheet ID
 
 Now SheetsTranslator has an access to this sheet and is ready to use it!
@@ -38,6 +38,11 @@ pod 'SheetsTranslator'
 ```
 "${PODS_ROOT}/SheetsTranslator/sheets" -s <your sheet ID> -c <your credentials path> -o <your app directory>/Resources
 ```
+##### Flags
+ * ``-s, --sheet`` - Spreadsheet ID (required)
+ * ``-c, --credentials`` - Credentials path (required)
+ * ``-o, --output`` - Output translation path (or current directory if not provided)
+ * ``-t, --tab`` - Sheet tab name(or first one if not provided
 3. Replace your sheet ID and output directory
 4. Build the project
 
