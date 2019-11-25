@@ -30,7 +30,7 @@ private let tabNameArgument =
     CommandStringArgument(shortFlag: "t",
                           longFlag: "tab",
                           required: false,
-                          usage: "Sheet tab name(or first one if not provided)")
+                          usage: "Sheet tab name (or first one if not provided)")
 
 CommandLineTool.shared.parser.add(arguments: sheetArgument, tabNameArgument, credentialsArgument, outputArgument)
 CommandLineTool.shared.parseOrExit()
