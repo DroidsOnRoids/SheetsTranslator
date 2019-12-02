@@ -38,6 +38,11 @@ pod 'SheetsTranslator'
 ```
 "${PODS_ROOT}/SheetsTranslator/sheets" -s <your sheet ID> -c <your credentials path> -o <your app directory>/Resources
 ```
+##### Flags
+ * ``-s, --sheet`` - Spreadsheet ID (required)
+ * ``-c, --credentials`` - Credentials path (required)
+ * ``-o, --output`` - Output translation path (or current directory if not provided)
+ * ``-t, --tab`` - Sheet tab name(or first one if not provided
 3. Replace your sheet ID and output directory
 4. Build the project
 

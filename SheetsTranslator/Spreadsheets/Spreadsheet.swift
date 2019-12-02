@@ -80,11 +80,15 @@ struct GridData {
 }
 
 struct Sheet {
-    
+
+    let name: String
     let data: [GridData]
     
     init?(json: [String: Any]) {
-        guard let data = json["data"] as? [[String: Any]] else { return nil }
+        guard let data = json["data"] as? [[String: Any]],
+            let name = (json["properties"] as? [String: Any])?["title"] as? String else { return nil }
+
+        self.name = name
         self.data = data.compactMap { GridData(json: $0) }
     }
 }

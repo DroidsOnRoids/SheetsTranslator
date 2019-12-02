@@ -26,7 +26,13 @@ private let outputArgument =
                           required: false,
                           usage: "Output translation path (or current directory if not provided)")
 
-CommandLineTool.shared.parser.add(arguments: sheetArgument, credentialsArgument, outputArgument)
+private let tabNameArgument =
+    CommandStringArgument(shortFlag: "t",
+                          longFlag: "tab",
+                          required: false,
+                          usage: "Sheet tab name (or first one if not provided)")
+
+CommandLineTool.shared.parser.add(arguments: sheetArgument, tabNameArgument, credentialsArgument, outputArgument)
 CommandLineTool.shared.parseOrExit()
 
 private let credentialsPath = credentialsArgument.value ?? CommandLineTool.shared.programPath + "credentials.json"
@@ -45,7 +51,7 @@ private func parseResult(_ result: APIResult<[String: Any]>) {
             return
         }
         
-        guard let translation = Translations.from(spreadsheet: sheet) else {
+        guard let translation = Translations.from(spreadsheet: sheet, tabName: tabNameArgument.value) else {
             warningAndExit("Failed to parse translations")
             return
         }

@@ -9,6 +9,7 @@
 struct SpreadsheetFormatter: CustomStringConvertible {
     
     let spreadsheet: Spreadsheet
+    let tabName: String?
     
     var rows: Int {
         return rowData?.count ?? 0
@@ -33,6 +34,7 @@ struct SpreadsheetFormatter: CustomStringConvertible {
     }
     
     private var rowData: [RowData]? {
-        return spreadsheet.sheets.first?.data.first?.rowData
+        let sheet = spreadsheet.sheets.first { $0.name == tabName } ?? spreadsheet.sheets.first
+        return sheet?.data.first?.rowData
     }
 }
